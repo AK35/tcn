@@ -1,0 +1,27 @@
+.tc-back-top {
+    z-index: 10000;
+    position: fixed;
+    cursor: pointer;
+    display: none
+}
+
+.tc-back-top.tc-back-top-show {
+    display: block
+}
+
+.tc-back-top-inner {
+    background-color: rgba(0, 0, 0, .6);
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+    transition: all .2s ease-in-out
+}
+
+.tc-back-top-inner:hover {
+    background-color: rgba(0, 0, 0, .7)
+}
+
+.tc-back-top i {
+    color: #fff;
+    font-size: 24px;
+    padding: 8px 12px
+}

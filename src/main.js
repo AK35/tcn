@@ -1,0 +1,34 @@
+// The Vue build version to load with the `import` command
+// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+import Vue from 'vue'
+import Vuex from 'vuex'
+import components from 'components'
+import ElementUI from 'element-ui'
+import VueRouter from 'vue-router'
+import backTop from 'directives/backtop'
+import 'element-ui/lib/theme-default/index.css'
+import 'assets/styles'
+import 'assets/font/iconfont.css'
+
+import progressbar from 'plugins/progressbar'
+
+Vue.config.productionTip = false
+
+Vue.use(Vuex)
+Vue.directive('backtop', backTop)
+
+Vue.use(components)
+Vue.use(ElementUI)
+
+Vue.prototype.$Progress = progressbar
+
+VueRouter.prototype.forward = function (location) {
+  this.push(location)
+}
+
+VueRouter.prototype.back = function (location) {
+  window.history.back()
+}
+
+export default {}
+

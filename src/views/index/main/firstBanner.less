@@ -1,0 +1,408 @@
+.index .bannerBox {
+  min-width: 1000px;
+}
+.index .bannerBox .firstBanner {
+  height: 528px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #012544;
+  overflow: hidden;
+}
+
+.index .bannerBox .firstBanner .leftBox {
+  z-index: 20;
+  padding-top: 130px;
+}
+
+.index .bannerBox .firstBanner .leftBox .title {
+  -webkit-transform: translateY(-25px);
+  transform: translateY(-25px);
+  opacity: 0;
+  font-size: 42px;
+  font-weight: 400;
+  color: #FFFFFF;
+  cursor: default;
+  width: 600px;
+  line-height: 64px;
+  white-space: nowrap;
+  -webkit-transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.index .bannerBox .firstBanner .leftBox .solgan {
+  -webkit-transform: translateY(-25px);
+  transform: translateY(-25px);
+  opacity: 0;
+  font-size: 20px;
+  color: #FFFFFF;
+  cursor: default;
+  line-height: 50px;
+  -webkit-transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.index .bannerBox .firstBanner .leftBox .intro {
+  -webkit-transform: translateY(-25px);
+  transform: translateY(-25px);
+  opacity: 0;
+  margin-bottom: 40px;
+  font-size: 20px;
+  color: #34c8e6;
+  cursor: default;
+  -webkit-transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.index .bannerBox .firstBanner .leftBox .tryBtnBox {
+  -webkit-transform: translateY(-25px);
+  transform: translateY(-25px);
+  opacity: 0;
+  -webkit-transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+
+.index .bannerBox .firstBanner .leftBox .tryBtn {
+  float: left;
+  width: 130px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.index .bannerBox .firstBanner .leftBox .tryBtn a {
+  display: block;
+  width: 100%;
+  height: 40px;
+  color: #ffffff;
+}
+
+.index .bannerBox .firstBanner .leftBox .tryBtn:hover {
+  border-color: #34c8e6;
+  background-color: #34c8e6;
+}
+
+.index .bannerBox .firstBanner .rightBox {
+  position: relative;
+}
+
+.index .bannerBox .firstBanner .rightBox .secondBorder {
+  z-index: 10;
+  position: absolute;
+  top: -25px;
+  right: 50px;
+  width: 578px;
+  height: 578px;
+  border-radius: 289px;
+  border: 1px solid #023256;
+}
+
+.index .bannerBox .firstBanner .rightBox .thirdBorder {
+  z-index: 10;
+  position: absolute;
+  margin-top: -196.5px;
+  margin-left: -196.5px;
+  top: 50%;
+  left: 50%;
+  width: 393px;
+  height: 393px;
+  border-radius: 196.5px;
+  border: 1px solid #0c5679;
+  background: url("~assets/images/firstBannerCenterBorder.png") no-repeat;
+  background-size: 78% 78%;
+  background-position: 43.5px 43.5px;
+}
+
+.index .bannerBox .firstBanner .rightBox .thirdBorder .logoImg {
+  position: absolute;
+  top: 50px;
+  left: 38px;
+}
+
+.index .bannerBox .firstBanner .rightBox .dockerImg {
+  z-index: 1;
+  position: absolute;
+  margin-top: -42.5px;
+  margin-left: -42.5px;
+  top: 50%;
+  left: 50%;
+  width: 85px;
+  height: 85px;
+  text-align: center;
+  border-radius: 42.5px;
+  background-color: rgba(22, 73, 126, 0.5);
+  -webkit-animation: firstBannerDocker 45s linear infinite;
+  animation: firstBannerDocker 45s linear infinite;
+}
+
+.index .bannerBox .firstBanner .rightBox .dockerImg img {
+  margin-top: 24px;
+}
+
+@keyframes firstBannerDocker {
+  0% {
+    transform: rotate(0deg) translate(289px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translate(289px) rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes firstBannerDocker {
+  0% {
+    transform: rotate(0deg) translate(289px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translate(289px) rotate(-360deg);
+  }
+}
+
+.index .bannerBox .firstBanner .rightBox .ksImg {
+  z-index: 1;
+  position: absolute;
+  margin-top: -42.5px;
+  margin-left: -42.5px;
+  top: 50%;
+  left: 50%;
+  width: 64px;
+  height: 64px;
+  text-align: center;
+  border-radius: 42.5px;
+  background-color: rgba(18, 71, 123, 0.5);
+  -webkit-animation: firstBannerks 45s linear infinite;
+  animation: firstBannerks 45s linear infinite;
+}
+
+.index .bannerBox .firstBanner .rightBox .ksImg img {
+  margin-top: 11px;
+}
+
+@keyframes firstBannerks {
+  0% {
+    transform: rotate(120deg) translate(279px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(480deg) translate(279px) rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes firstBannerks {
+  0% {
+    transform: rotate(120deg) translate(279px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(480deg) translate(279px) rotate(-360deg);
+  }
+}
+
+.index .bannerBox .firstBanner .rightBox .trImg {
+  z-index: 1;
+  position: absolute;
+  margin-top: -42.5px;
+  margin-left: -42.5px;
+  top: 50%;
+  left: 50%;
+  width: 85px;
+  height: 85px;
+  text-align: center;
+  border-radius: 42.5px;
+  background-color: rgba(22, 73, 126, 0.5);
+  -webkit-animation: firstBannertr 45s linear infinite;
+  animation: firstBannertr 45s linear infinite;
+}
+
+.index .bannerBox .firstBanner .rightBox .trImg img {
+  margin-top: 17px;
+}
+
+@-webkit-keyframes firstBannertr {
+  0% {
+    transform: rotate(240deg) translate(289px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(600deg) translate(289px) rotate(-360deg);
+  }
+}
+
+@keyframes firstBannertr {
+  0% {
+    transform: rotate(240deg) translate(289px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(600deg) translate(289px) rotate(-360deg);
+  }
+}
+
+.index .bannerBox .firstBanner .rightBox .containerIcon {
+  z-index: 20;
+  position: absolute;
+  margin-top: -10px;
+  margin-left: -10px;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  color: #FFFFFF;
+  -webkit-animation: firstBannerContainerIcon 30s linear infinite;
+  animation: firstBannerContainerIcon 30s linear infinite;
+}
+
+.index .bannerBox .firstBanner .rightBox .containerIcon p {
+  display: block;
+  margin-top: 8px;
+  margin-left: -13px;
+  width: 50px;
+  color: #60e8f8;
+}
+
+@keyframes firstBannerContainerIcon {
+  0% {
+    transform: rotate(0deg) translate(196px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translate(196px) rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes firstBannerContainerIcon {
+  0% {
+    transform: rotate(0deg) translate(196px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translate(196px) rotate(-360deg);
+  }
+}
+
+.index .bannerBox .firstBanner .rightBox .cicdIcon {
+  z-index: 20;
+  position: absolute;
+  margin-top: -10px;
+  margin-left: -10px;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  color: #FFFFFF;
+  -webkit-animation: firstBannerCicdIcon 30s linear infinite;
+  animation: firstBannerCicdIcon 30s linear infinite;
+}
+
+.index .bannerBox .firstBanner .rightBox .cicdIcon p {
+  display: block;
+  margin-top: -20px;
+  margin-left: 8px;
+  width: 50px;
+  color: #60e8f8;
+  transform: rotate(-90deg);
+}
+
+@-webkit-keyframes firstBannerCicdIcon {
+  0% {
+    transform: rotate(90deg) translate(196px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(450deg) translate(196px) rotate(-360deg);
+  }
+}
+
+@keyframes firstBannerCicdIcon {
+  0% {
+    transform: rotate(90deg) translate(196px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(450deg) translate(196px) rotate(-360deg);
+  }
+}
+
+.index .bannerBox .firstBanner .rightBox .serviceIcon {
+  z-index: 20;
+  position: absolute;
+  margin-top: -10px;
+  margin-left: -10px;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  color: #FFFFFF;
+  -webkit-animation: firstBannerServiceIcon 30s linear infinite;
+  animation: firstBannerServiceIcon 30s linear infinite;
+}
+
+.index .bannerBox .firstBanner .rightBox .serviceIcon p {
+  display: block;
+  margin-top: -43px;
+  margin-left: -24px;
+  width: 50px;
+  color: #60e8f8;
+  transform: rotate(-180deg);
+}
+
+@keyframes firstBannerServiceIcon {
+  0% {
+    transform: rotate(180deg) translate(196px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(540deg) translate(196px) rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes firstBannerServiceIcon {
+  0% {
+    transform: rotate(180deg) translate(196px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(540deg) translate(196px) rotate(-360deg);
+  }
+}
+
+.index .bannerBox .firstBanner .rightBox .devIcon {
+  z-index: 20;
+  position: absolute;
+  margin-top: -10px;
+  margin-left: -10px;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  color: #FFFFFF;
+  -webkit-animation: firstBannerDevIcon 30s linear infinite;
+  animation: firstBannerDevIcon 30s linear infinite;
+}
+
+.index .bannerBox .firstBanner .rightBox .devIcon p {
+  display: block;
+  margin-top: -15px;
+  margin-left: -39px;
+  width: 50px;
+  color: #60e8f8;
+  transform: rotate(-270deg);
+}
+
+@-webkit-keyframes firstBannerDevIcon {
+  0% {
+    transform: rotate(270deg) translate(196px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(630deg) translate(196px) rotate(-360deg);
+  }
+}
+
+@keyframes firstBannerDevIcon {
+  0% {
+    transform: rotate(270deg) translate(196px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(630deg) translate(196px) rotate(-360deg);
+  }
+}
+

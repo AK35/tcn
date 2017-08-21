@@ -1,0 +1,68 @@
+.tc-spin {
+  color: #2d8cf0;
+  vertical-align: middle;
+  text-align: center
+}
+
+.tc-spin-dot {
+  position: relative;
+  display: block;
+  border-radius: 50%;
+  background-color: #2d8cf0;
+  width: 20px;
+  height: 20px;
+  animation: ani-spin-bounce 1s 0s ease-in-out infinite
+}
+
+.tc-spin-large .tc-spin-dot {
+  width: 32px;
+  height: 32px
+}
+
+.tc-spin-small .tc-spin-dot {
+  width: 12px;
+  height: 12px
+}
+
+.tc-spin-fix {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 8;
+  display: table;
+  width: 100%;
+  height: 100%;
+  background-color: #fff
+}
+
+.tc-spin-fix .tc-spin-main {
+  display: table-cell;
+  vertical-align: middle;
+  width: inherit;
+  height: inherit
+}
+
+.tc-spin-fix .tc-spin-dot {
+  display: inline-block
+}
+
+.tc-spin-show-text .tc-spin-dot,
+.tc-spin-text {
+  display: none
+}
+
+.tc-spin-show-text .tc-spin-text {
+  display: block
+}
+
+@keyframes ani-spin-bounce {
+  0% {
+      transform: scale(0)
+  }
+  100% {
+      transform: scale(1);
+      opacity: 0
+  }
+}
