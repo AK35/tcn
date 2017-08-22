@@ -54,7 +54,7 @@ export default {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  background-color: #ecf0f4;
+  background-color: #ffffff;
 }
 
 .tc-page-menu-title {
@@ -84,7 +84,7 @@ export default {
   position: fixed;
   width: 140px;
   height: 100%;
-  background-color: #fff;
+  background-color: #ecf0f4;
   border-right: 1px solid #e5e5e5;
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -111,7 +111,7 @@ export default {
   -webkit-transition: all 0.2s ease;
   border-bottom: 8px solid transparent;
   border-left: none;
-  border-right: 20px solid #ecf0f4;
+  border-right: 20px solid #ffffff;
   border-top: 8px solid transparent;
 }
 

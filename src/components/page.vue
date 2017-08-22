@@ -33,7 +33,7 @@ export default {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  background-color: #ecf0f4;
+  background-color: #ffffff;
 }
 
 .tc-page-scroll {
