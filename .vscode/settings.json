@@ -1,0 +1,46 @@
+{
+    "workbench.colorTheme": "Monokai",
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+    "element-helper.version": "1.4",
+    "cssrem.rootFontSize": 50,
+    "editor.tabSize": 2,
+    "files.associations": {
+        "*.vue": "vue"
+    },
+    "eslint.autoFixOnSave": true,
+    // "eslint.options": {},
+    // "eslint.validate": [
+    //     "javascript",
+    //     "javascriptreact",
+    //     "vue",
+    //     "vue-html"
+    // ],
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/dist": true
+    },
+    "emmet.syntaxProfiles": {
+        "javascript": "jsx",
+        "vue": "html",
+        "vue-html": "html"
+    },
+    "git.confirmSync": false,
+    "window.zoomLevel": 0,
+    "typescript.check.tscVersion": false,
+    "editor.renderWhitespace": "boundary",
+    "editor.cursorBlinking": "smooth",
+    "editor.minimap.enabled": true,
+    "editor.minimap.renderCharacters": false,
+    "editor.fontFamily": "'Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback','Monaco'",
+    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
+    "editor.codeLens": true,
+    "editor.snippetSuggestions": "top",
+    "editor.fontSize": 16,
+    "editor.wordWrap": "on",
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "editor.formatOnType": false,
+    "editor.formatOnSave": false
+}
