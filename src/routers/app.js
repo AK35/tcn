@@ -18,6 +18,11 @@ const routers = [{
     name: 'appManagePage',
     meta: { requiresAuth: false },
     component: (resolve) => require(['views/app/manage/page.vue'], resolve)
+  }, {
+    path: '/manage/demo',
+    name: 'appManageDemo',
+    meta: { requiresAuth: false },
+    component: (resolve) => require(['views/app/manage/demo.vue'], resolve)
   }]
 }]
 export default routers
