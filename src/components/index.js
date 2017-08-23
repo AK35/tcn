@@ -4,13 +4,15 @@ import pageLaout from './pageLaout'
 import pageMenu from './pageMenu'
 import backTop from './back-top'
 import spin from './spin'
+import popover from './popover'
 var components = {
   page,
   backTop,
   spin,
   pageWrapper,
   pageLaout,
-  pageMenu
+  pageMenu,
+  popover
 }
 
 export default {

@@ -1,5 +1,5 @@
 <template>
-  <page-menu class="app-manage" menuTitle="总览" :menus="menus">
+  <page-menu class="app-manage" menuTitle="应用管理" :menus="menus">
   </page-menu>
 </template>
 
@@ -10,15 +10,21 @@ export default {
     return {
       menus: [{
         id: 'appManageApp',
-        title: '应用',
+        title: '系统服务管理',
         route: {
           path: '/manage'
         }
       },{
         id: 'appManagePage',
-        title: '页面',
+        title: '服务注册',
         route: {
           path: '/manage/page'
+        }
+      },{
+        id: 'appManageDemo',
+        title: '服务授权',
+        route: {
+          path: '/manage/demo'
         }
       }]
     }

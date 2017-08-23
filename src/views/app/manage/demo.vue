@@ -1,18 +1,18 @@
 <template>
-  <page>
+  <page class="app-manage-page">
     <el-row>
       <el-col :span="24" class="tc-page-title">
-        伙伴机构系统服务管理
+        服务授权
       </el-col>
     </el-row>
     <el-form :inline="true" :model="orgForm" class="form-inline">
-      <el-form-item label="机构名称">
+      <el-form-item label="被授权机构名称">
         <el-select v-model="orgForm.org" placeholder="机构名称">
           <el-option label="区域一" value="shanghai"></el-option>
           <el-option label="区域二" value="beijing"></el-option>
         </el-select>
       </el-form-item>
-      <el-form-item label="系统名称">
+      <el-form-item label="被授权系统名称">
         <el-select v-model="orgForm.sys" placeholder="系统名称">
           <el-option label="区域一" value="shanghai"></el-option>
           <el-option label="区域二" value="beijing"></el-option>
@@ -25,9 +25,15 @@
     <el-table :data="tableData" stripe border height="400">
       <el-table-column type="index" label="序号" width="70" align="center">
       </el-table-column>
-      <el-table-column prop="date" label="系统名称" min-width="200">
+      <el-table-column prop="date" label="注册服务" min-width="200">
       </el-table-column>
-      <el-table-column prop="name" label="服务名称" min-width="200">
+      <el-table-column prop="name" label="注册服务组" min-width="200">
+      </el-table-column>
+      <el-table-column prop="name" label="源系统名称" min-width="200">
+      </el-table-column>
+      <el-table-column prop="name" label="被授权系统名称" min-width="200">
+      </el-table-column>
+      <el-table-column prop="name" label="有效期" min-width="200">
       </el-table-column>
       <el-table-column label="操作" min-width="200" align="center">
         <template scope="scope">
@@ -41,32 +47,37 @@
       </el-pagination>
     </div>
   
-    <el-dialog title="服务添加" :visible.sync="dialogFormVisible">
-      <el-form :model="ruleForm" label-position="right" :label-width="formLabelWidth">
-        <el-form-item label="系统名称">
-          亿医通
-        </el-form-item>
-        <el-form-item label="服务名" prop="name">
-          <el-input v-model="ruleForm.name" placeholder="服务名"></el-input>
-        </el-form-item>
-        <el-form-item label="源服务地址" prop="addrss">
-          <el-input v-model="ruleForm.addrss" placeholder="源服务地址"></el-input>
-        </el-form-item>
-        <el-form-item label="源服务认证配置" prop="setting">
-          <el-select v-model="ruleForm.setting" placeholder="源服务认证配置">
+    <el-dialog title="服务添加" :visible.sync="dialogFormVisible" customClass="page-dialog">
+      <el-form :model="ruleForm" label-position="right" :inline="true" :label-width="formLabelWidth">
+        <el-form-item label="注册服务组" prop="setting">
+          <el-select v-model="ruleForm.setting" placeholder="注册服务组">
             <el-option label="区域一" value="shanghai"></el-option>
             <el-option label="区域二" value="beijing"></el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="源服务描述" prop="desc">
-          <el-input type="textarea" v-model="ruleForm.desc" placeholder="源服务描述"></el-input>
-        </el-form-item>
       </el-form>
+      <el-table :data="tableData" stripe border @select="onSelect">
+        <el-table-column type="selection" width="55">
+        </el-table-column>
+        <el-table-column type="index" label="序号" width="70" align="center">
+        </el-table-column>
+        <el-table-column prop="name" label="服务名称" min-width="200">
+        </el-table-column>
+        <el-table-column prop="date" label="有效期" min-width="200">
+          <template scope="scope">
+            <div @click="showPop(scope.row, $event)">{{scope.row.date}}</div>
+          </template>
+        </el-table-column>
+      </el-table>
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisible = false">取 消</el-button>
         <el-button type="primary" @click="dialogFormVisible = false">保 存</el-button>
       </div>
     </el-dialog>
+    <popover placement="top" :reference="reference" :value.sync="isShowPop">
+      <el-date-picker type="date" v-model="pickerDate" placeholder="选择日期" :picker-options="pickerOptions" @change="dateChange">
+      </el-date-picker>
+    </popover>
   </page>
 </template>
 
@@ -100,7 +111,16 @@ export default {
         date: '2016-05-03',
         name: '王小虎',
         address: '上海市普陀区金沙江路 1516 弄'
-      }]
+      }],
+      isShowPop: false,
+      reference: {},
+      pickerDate: '',
+      currentRow: {},
+      pickerOptions: {
+        disabledDate(time) {
+          return !moment(time.getTime()).isBetween(moment().subtract(1, 'd').format('YYYY-MM-DD'), moment().add(1, "years").format('YYYY-MM-DD'))
+        }
+      }
     }
   },
   computed: {
@@ -123,13 +143,37 @@ export default {
     },
     onDel(index, rows) {
       rows.splice(index, 1);
+    },
+    onSelect(selection, row) {
+      row.selected = !row.selected
+    },
+    showPop(row, $evt) {
+      if (row.selected) {
+        this.reference = $evt.target
+        this.currentRow = row
+        this.isShowPop = true
+      }
+    },
+    dateChange(date) {
+      this.currentRow.date = date
+      this.isShowPop = false
     }
   }
 }
 </script>
 
 <style scoped>
+.app-manage-page .page-text {
+  width: 550px;
+}
+
 .app-manage-page .form-inline {
   min-width: 800px;
+}
+</style>
+
+<style>
+.app-manage-page .page-dialog {
+  width: 750px;
 }
 </style>

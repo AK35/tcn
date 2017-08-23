@@ -6,6 +6,7 @@ import components from 'components'
 import ElementUI from 'element-ui'
 import VueRouter from 'vue-router'
 import backTop from 'directives/backtop'
+import moment from 'moment'
 import 'element-ui/lib/theme-default/index.css'
 import 'assets/styles'
 import 'assets/font/iconfont.css'
@@ -19,6 +20,7 @@ Vue.directive('backtop', backTop)
 
 Vue.use(components)
 Vue.use(ElementUI)
+window.moment = moment
 
 Vue.prototype.$Progress = progressbar
 

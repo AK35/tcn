@@ -13,7 +13,7 @@
         <i class="iconfont icon-indentation-left" v-show="navCollapse"></i>
       </div>
     </div>
-    <section :class="{'tc-menu-collapse-page':navCollapse}">
+    <section class="tc-page-menu-content" :class="{'tc-menu-collapse-page':navCollapse}">
       <router-view></router-view>
     </section>
   </div>
@@ -34,7 +34,7 @@ export default {
   computed: {
     activeItem() {
       var matched = this.$route.matched
-      return  matched[1]?matched[1].name:''
+      return matched[1] ? matched[1].name : ''
     }
   },
   data() {
@@ -55,6 +55,11 @@ export default {
   width: 100%;
   overflow: hidden;
   background-color: #ffffff;
+}
+
+.tc-page-menu-content {
+  height: 100%;
+  width: 100%;
 }
 
 .tc-page-menu-title {
