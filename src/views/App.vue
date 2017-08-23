@@ -75,6 +75,13 @@ export default {
         route: {
           path: '/manage'
         }
+      },{
+        id: 'appManageTwo',
+        icon: 'el-icon-setting',
+        title: '测试项目管理',
+        route: {
+          path: '/managetwo'
+        }
       }]
     }
   },
