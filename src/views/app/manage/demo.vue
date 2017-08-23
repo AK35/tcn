@@ -46,7 +46,7 @@
       <el-pagination :page-size="20" :page-sizes="[20]" layout="total,sizes,prev,pager,next" :total="100">
       </el-pagination>
     </div>
-  
+
     <el-dialog title="服务添加" :visible.sync="dialogFormVisible" customClass="page-dialog">
       <el-form :model="ruleForm" label-position="right" :inline="true" :label-width="formLabelWidth">
         <el-form-item label="注册服务组" prop="setting">
@@ -64,8 +64,10 @@
         <el-table-column prop="name" label="服务名称" min-width="200">
         </el-table-column>
         <el-table-column prop="date" label="有效期" min-width="200">
+        </el-table-column>
+        <el-table-column prop="date" label="操作" min-width="200">
           <template scope="scope">
-            <div @click="showPop(scope.row, $event)">{{scope.row.date}}</div>
+            <el-button size="small" :disabled="!scope.row.selected" @click="showPop(scope.row, $event)">编辑有效期</el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -124,7 +126,7 @@ export default {
     }
   },
   computed: {
-    orgFormBtn: function () {
+    orgFormBtn: function() {
       if (this.orgForm.org && this.orgForm.sys) {
         return false
       } else {
@@ -148,10 +150,14 @@ export default {
       row.selected = !row.selected
     },
     showPop(row, $evt) {
+      debugger
       if (row.selected) {
-        this.reference = $evt.target
-        this.currentRow = row
-        this.isShowPop = true
+        this.pickerDate = row.date
+        this.$nextTick(function() {
+          this.reference = $evt.target
+          this.currentRow = row
+          this.isShowPop = true
+        })
       }
     },
     dateChange(date) {
@@ -174,6 +180,6 @@ export default {
 
 <style>
 .app-manage-page .page-dialog {
-  width: 750px;
+  width: 780px;
 }
 </style>
