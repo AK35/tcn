@@ -69,6 +69,13 @@ export default {
           path: '/'
         }
       }, {
+          id: 'appManage',
+          icon: 'el-icon-setting',
+          title: '系统管理',
+          route: {
+            path: '/manage'
+          }
+      }, {
           id: 'appMessageManage',
           icon: 'el-icon-setting',
           title: '消息管理',
