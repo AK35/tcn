@@ -82,6 +82,13 @@ export default {
         route: {
           path: '/managetwo'
         }
+      },{
+        id: 'appTest',
+        icon: 'el-icon-star-on',
+        title: '测试组件',
+        route: {
+          path: '/test'
+        }
       }]
     }
   },

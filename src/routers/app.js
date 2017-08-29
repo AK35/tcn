@@ -39,6 +39,27 @@ const routers = [{
     name: 'appManageTwoPage',
     meta: { requiresAuth: false },
     component: (resolve) => require(['views/app/managetwo/page.vue'], resolve)
+  }, {
+    path: '/managetwo/demo',
+    name: 'aappManageTwoDemo',
+    meta: { requiresAuth: false },
+    component: (resolve) => require(['views/app/managetwo/demo.vue'], resolve)
+  }]
+}, {
+  path: '/test',
+  name: 'appTest',
+  meta: { requiresAuth: false },
+  component: (resolve) => require(['views/app/test/index.vue'], resolve),
+  children: [{
+    path: '/test',
+    name: 'appTestSelect',
+    meta: { requiresAuth: false },
+    component: (resolve) => require(['views/app/test/select.vue'], resolve)
+  }, {
+    path: '/test/table',
+    name: 'appTestTble',
+    meta: { requiresAuth: false },
+    component: (resolve) => require(['views/app/test/table.vue'], resolve)
   }]
 }]
 export default routers

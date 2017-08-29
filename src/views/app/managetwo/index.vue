@@ -20,6 +20,12 @@ export default {
         route: {
           path: '/managetwo/page'
         }
+      },{
+        id: 'appManageTwoDemo',
+        title: '测试页面demo',
+        route: {
+          path: '/managetwo/demo'
+        }
       }]
     }
   },
