@@ -69,12 +69,19 @@ export default {
           path: '/'
         }
       }, {
-        id: 'appManage',
-        icon: 'el-icon-setting',
-        title: '应用管理',
-        route: {
-          path: '/manage'
-        }
+          id: 'appMessageManage',
+          icon: 'el-icon-setting',
+          title: '消息管理',
+          route: {
+            path: '/messageManage'
+          }
+      },{
+          id: 'appServiceManage',
+          icon: 'el-icon-setting',
+          title: '服务管理',
+          route: {
+            path: '/serviceManage'
+          }
       },{
         id: 'appManageTwo',
         icon: 'el-icon-setting',
@@ -82,14 +89,14 @@ export default {
         route: {
           path: '/managetwo'
         }
-      },{
+    },{
         id: 'appTest',
         icon: 'el-icon-star-on',
         title: '测试组件',
         route: {
           path: '/test'
         }
-      }]
+    }]
     }
   },
   computed: {
