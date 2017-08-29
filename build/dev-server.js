@@ -8,6 +8,9 @@ if (!process.env.NODE_ENV) {
 var opn = require('opn')
 var path = require('path')
 var express = require('express')
+var router = express.Router()
+var request = require('superagent')
+var bodyParser = require('body-parser')
 var webpack = require('webpack')
 var history = require('connect-history-api-fallback')
 var proxyMiddleware = require('http-proxy-middleware')
@@ -24,6 +27,10 @@ var autoOpenBrowser = !!config.dev.autoOpenBrowser
 var proxyTable = config.dev.proxyTable
 
 var app = express()
+app.use(bodyParser.urlencoded({
+  extended: false
+}))
+app.use(bodyParser.json())
 var compiler = webpack(webpackConfig)
 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
@@ -52,9 +59,32 @@ Object.keys(proxyTable).forEach(function (context) {
   app.use(proxyMiddleware(options.filter || context, options))
 })
 
+router.all(config.dev.proxy, (req, res) => {
+  // req.url = req.url.split(config.split)[1]
+  var method = req.method
+  var sreq = request(method, config.dev.uri + req.url)
+    .timeout(5000)
+  if (method === 'POST' || method === 'PUT' || method === 'PATCH') {
+    sreq.set('Content-Type', 'application/json;charset=UTF-8')
+    if (req.body) {
+      sreq = sreq.send(req.body)
+    }
+  }
+  sreq.end(function (err, sres) {
+    if (err) {
+      res.send({
+        head: {
+          errcode: err.code || err.status,
+          errmsg: err.message
+        }
+      })
+    } else if (sres.body) {
+      res.send(sres.body)
+    }
+  })
+})
 
-
-
+app.all('*', router)
 app.use(history({
   index: '/app.html',
   verbose: true,

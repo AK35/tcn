@@ -7,6 +7,7 @@ import ElementUI from 'element-ui'
 import VueRouter from 'vue-router'
 import backTop from 'directives/backtop'
 import moment from 'moment'
+import api from '@/api'
 import 'element-ui/lib/theme-default/index.css'
 import 'assets/styles'
 import 'assets/font/iconfont.css'
@@ -17,7 +18,7 @@ Vue.config.productionTip = false
 
 Vue.use(Vuex)
 Vue.directive('backtop', backTop)
-
+Vue.use(api)
 Vue.use(components)
 Vue.use(ElementUI)
 window.moment = moment
