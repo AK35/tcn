@@ -109,9 +109,14 @@ const routers = [{
     component: (resolve) => require(['views/app/test/select.vue'], resolve)
   }, {
     path: '/test/table',
-    name: 'appTestTble',
+    name: 'appTestTable',
     meta: { requiresAuth: false },
     component: (resolve) => require(['views/app/test/table.vue'], resolve)
+  }, {
+    path: '/test/echarts',
+    name: 'appTestEcharts',
+    meta: { requiresAuth: false },
+    component: (resolve) => require(['views/app/test/echarts.vue'], resolve)
   }]
 }
 ]

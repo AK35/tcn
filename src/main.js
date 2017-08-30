@@ -8,6 +8,7 @@ import VueRouter from 'vue-router'
 import backTop from 'directives/backtop'
 import moment from 'moment'
 import api from '@/api'
+import echarts from 'echarts'
 import 'element-ui/lib/theme-default/index.css'
 import 'assets/styles'
 import 'assets/font/iconfont.css'
@@ -24,6 +25,7 @@ Vue.use(ElementUI)
 window.moment = moment
 
 Vue.prototype.$Progress = progressbar
+Vue.prototype.$echarts = echarts
 
 VueRouter.prototype.forward = function (location) {
   this.push(location)

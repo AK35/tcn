@@ -15,10 +15,16 @@ export default {
           path: '/test'
         }
       },{
-        id: 'appTestTble',
+        id: 'appTestTable',
         title: '表格',
         route: {
           path: '/test/table'
+        }
+      }, {
+        id: 'appTestEcharts',
+        title: '图表',
+        route: {
+          path: '/test/echarts'
         }
       }]
     }
