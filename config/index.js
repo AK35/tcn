@@ -22,6 +22,7 @@ module.exports = {
     bundleAnalyzerReport: process.env.npm_config_report
   },
   dev: {
+    index:'/app.html',// 配置工程主页
     env: require('./dev.env'),
     port: 3000,
     autoOpenBrowser: true,

@@ -86,7 +86,7 @@ router.all(config.dev.proxy, (req, res) => {
 
 app.all('*', router)
 app.use(history({
-  index: '/app.html',
+  index: config.dev.index,
   verbose: true,
   logger: console.log.bind(console)
 }))
@@ -123,6 +123,7 @@ devMiddleware.waitUntilValid(() => {
   // when env is testing, don't need open it
   if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
     opn(uri)
+    // opn(uri + '/app.html')
   }
   _resolve()
 })
